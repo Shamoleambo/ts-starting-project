@@ -1,13 +1,14 @@
-enum Roletype {
-  ADMIN,
-  USER,
-  AUTHOR
+function combine(input1: number | string, input2: number | string) {
+  let result
+  if (typeof input1 === 'number' && typeof input2 === 'number')
+    result = input1 + input2
+  else result = input1.toString() + input2.toString()
+
+  return result
 }
 
-const test = {
-  name: 'Tiago',
-  age: 28,
-  role: Roletype.ADMIN
-}
+const combinedNumbers = combine(2, 3)
+console.log(combinedNumbers)
 
-if (test.role === Roletype.ADMIN) console.log(test.role)
+const combinedStrings = combine('Tiago', 'Jimmy')
+console.log(combinedStrings)
